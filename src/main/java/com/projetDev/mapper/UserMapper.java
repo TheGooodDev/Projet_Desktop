@@ -17,6 +17,7 @@ public class UserMapper {
 
     public static User documentToUser(Document document){
         User user = new User(
+                document.getObjectId("_id"),
                 document.getString("name"),
                 document.getString("firstName"),
                 document.getDate("birthDate"),

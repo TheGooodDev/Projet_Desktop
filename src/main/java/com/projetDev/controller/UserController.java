@@ -9,6 +9,6 @@ public interface UserController {
     String saveUser(User user);
     List<User> getAll();
     User findByName(String name);
-    String updateActivity(User user);
-    String deleteActivity(String name);
+    String updateUser(User user);
+    String deleteUser(String name);
 }

@@ -7,6 +7,7 @@ import com.mongodb.client.result.UpdateResult;
 import com.projetDev.model.User;
 import org.bson.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.projetDev.mapper.ActivityMapper.documentToActivity;
@@ -39,11 +40,15 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public List<User> findAll() {
-        return null;
+        List<User> users = new ArrayList<User>();
+        this.collection.find().forEach(document -> {
+            users.add(documentToUser(document));
+        });
+        return users;
     }
 
     @Override
     public DeleteResult delete(String name) {
-        return null;
+        return this.collection.deleteOne(new Document("name", name));
     }
 }

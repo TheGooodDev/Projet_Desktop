@@ -1,8 +1,7 @@
 package com.projetDev;
 
-import com.projetDev.GUI.ActivityForm;
 import com.projetDev.GUI.UserForm;
-import com.projetDev.controller.ActivityControllerImpl;
+import com.projetDev.GUI.UserListForm;
 import com.projetDev.database.DbConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +17,6 @@ public class Window extends JFrame{
     public Window() {
         super("Projet Dev");
         Container cp = this.getContentPane();
-
         setBounds(0,0, 800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,6 +32,16 @@ public class Window extends JFrame{
                 cp.add(rootPanel);
             }
         });
+        JMenuItem listUser = new JMenuItem("List User");
+        user.add(listUser);
+        listUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clearContainer(cp);
+                JPanel rootPanel = new UserListForm().getRootPanel();
+                cp.add(rootPanel);
+            }
+        });
         JMenu activity = new JMenu("Activity");
         JMenuItem addActivity = new JMenuItem("Add Activity");
         activity.add(addActivity);
@@ -41,7 +49,7 @@ public class Window extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 clearContainer(cp);
-                JPanel rootPanel = new ActivityForm().getRootPanel();
+                JPanel rootPanel = new UserListForm().getRootPanel();
                 cp.add(rootPanel);
             }
         });

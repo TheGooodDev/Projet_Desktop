@@ -28,12 +28,12 @@ public class UserControllerImpl implements UserController {
     }
 
     @Override
-    public String updateActivity(User user){
+    public String updateUser(User user){
         return this.userRepository.update(user).toString();
     }
 
     @Override
-    public String deleteActivity(String name) {
+    public String deleteUser(String name) {
         return this.userRepository.delete(name).toString();
     }
 }

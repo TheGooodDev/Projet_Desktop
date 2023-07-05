@@ -47,7 +47,7 @@ public class ActivityRepositoryImpl implements ActivityRepository {
     }
 
     @Override
-    public DeleteResult delete(String name) {
+    public DeleteResult delete(String name){
         return this.collection.deleteOne(new Document("name", name));
     }
 }

@@ -1,6 +1,7 @@
 package com.projetDev;
 
 import com.projetDev.GUI.ActivityForm;
+import com.projetDev.GUI.UserForm;
 import com.projetDev.controller.ActivityControllerImpl;
 import com.projetDev.database.DbConnection;
 import org.slf4j.Logger;
@@ -23,6 +24,16 @@ public class Window extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JMenuBar menuBar = new JMenuBar();
         JMenu user = new JMenu("User");
+        JMenuItem addUser = new JMenuItem("Add User");
+        user.add(addUser);
+        addUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clearContainer(cp);
+                JPanel rootPanel = new UserForm().getRootPanel();
+                cp.add(rootPanel);
+            }
+        });
         JMenu activity = new JMenu("Activity");
         JMenuItem addActivity = new JMenuItem("Add Activity");
         activity.add(addActivity);
@@ -35,9 +46,6 @@ public class Window extends JFrame{
             }
         });
         JMenu statistics = new JMenu("Statistics");
-
-
-
         menuBar.add(user);
         menuBar.add(activity);
         menuBar.add(statistics);

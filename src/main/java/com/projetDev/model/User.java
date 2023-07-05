@@ -1,5 +1,7 @@
 package com.projetDev.model;
 
+import java.util.Date;
+
 public class User {
     /*
     • nom
@@ -9,10 +11,10 @@ public class User {
      */
     private String name;
     private String firstName;
-    private String birthDate;
+    private Date birthDate;
     private String genre;
 
-    public User(String name, String firstName, String birthDate, String genre) {
+    public User(String name, String firstName, Date birthDate, String genre) {
         this.name = name;
         this.firstName = firstName;
         this.birthDate = birthDate;
@@ -35,11 +37,11 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 

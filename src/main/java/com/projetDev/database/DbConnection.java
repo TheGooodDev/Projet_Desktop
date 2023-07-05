@@ -5,6 +5,7 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.projetDev.repository.ActivityRepositoryImpl;
+import com.projetDev.repository.UserRepositoryImpl;
 import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +30,12 @@ public class DbConnection implements AutoCloseable{
         MongoCollection<Document> activitiesCollection = database.getCollection("activities");
         logger.info("Get activity repository");
         return new ActivityRepositoryImpl(activitiesCollection);
+    }
+
+    public UserRepositoryImpl getUserRepository(){
+        MongoCollection<Document> usersCollection = database.getCollection("users");
+        logger.info("Get user repository");
+        return new UserRepositoryImpl(usersCollection);
     }
 
     @Override

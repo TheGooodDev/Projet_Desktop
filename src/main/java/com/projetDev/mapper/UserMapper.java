@@ -19,7 +19,7 @@ public class UserMapper {
         User user = new User(
                 document.getString("name"),
                 document.getString("firstName"),
-                document.getString("birthDate"),
+                document.getDate("birthDate"),
                 document.getString("genre")
         );
         return user;

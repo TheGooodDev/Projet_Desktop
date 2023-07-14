@@ -30,7 +30,6 @@ public class ActivityForm implements ActionListener {
 
     public ActivityForm() {
         saveButton.addActionListener(this);
-
     }
 
     private static final Logger logger = LoggerFactory.getLogger(ActivityForm.class);
@@ -53,7 +52,7 @@ public class ActivityForm implements ActionListener {
                 activityController.saveActivity(activity);
                 logger.info("Activity saved");
             } catch (Exception exception) {
-                logger.error("An error occurred during saving activity ==> {}", exception.toString());
+                logger.error("An error occurred during saving user ==> {}", exception.toString());
             }
         } else if (commande.equals("Cancel")) {
             // action liée au bouton cancel

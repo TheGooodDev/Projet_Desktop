@@ -5,13 +5,14 @@ import org.bson.types.ObjectId;
 import java.util.Date;
 
 public class Activity {
+
     /*
-    • un nom
-    • une durée (en minutes)
-    • une date
-    • un RPE (ressenti post-effort)
-    • une charge (produit entre la durée et du RPE)
-     */
+        • un nom
+        • une durée (en minutes)
+        • une date
+        • un RPE (ressenti post-effort)
+        • une charge (produit entre la durée et du RPE)
+         */
     private ObjectId id;
     private String name;
     private int duration;
@@ -34,6 +35,11 @@ public class Activity {
         this.rpe = rpe;
         this.charge = charge;
     }
+
+    public void setId(ObjectId id) {
+        this.id = id;
+    }
+
     public ObjectId getId() {
         return id;
     }
@@ -41,6 +47,7 @@ public class Activity {
     public String toString(){
         return "Activity: " + this.id +" " + this.name + " " + this.duration + " " + this.publishedDate + " " + this.rpe + " " + this.charge;
     }
+
 
     public String getName() {
         return name;

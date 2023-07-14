@@ -1,23 +1,40 @@
 package com.projetDev.model;
 
+import org.bson.types.ObjectId;
+
+import java.util.Date;
+
 public class User {
-    /*
-    • nom
-    • prénom
-    • date de naissance
-    • sexe
-     */
+
+    private ObjectId id;
     private String name;
     private String firstName;
-    private String birthDate;
+    private Date birthDate;
     private String genre;
 
-    public User(String name, String firstName, String birthDate, String genre) {
+    public User(String name, String firstName, Date birthDate, String genre) {
         this.name = name;
         this.firstName = firstName;
         this.birthDate = birthDate;
         this.genre = genre;
     }
+
+    public User(ObjectId id, String name, String firstName, Date birthDate, String genre) {
+        this.id = id;
+        this.name = name;
+        this.firstName = firstName;
+        this.birthDate = birthDate;
+        this.genre = genre;
+    }
+
+    public ObjectId getId() {
+        return id;
+    }
+
+    public void setId(ObjectId id) {
+        this.id = id;
+    }
+
 
     public String getName() {
         return name;
@@ -35,11 +52,11 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 

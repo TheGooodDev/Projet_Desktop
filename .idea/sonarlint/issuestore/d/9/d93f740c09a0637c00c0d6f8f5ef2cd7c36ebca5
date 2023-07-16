@@ -1,0 +1,19 @@
+
+L
+java:S3740"/Provide the parametrized type for this generic.(À–ìö8’ò´«’1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•³Úùÿÿÿÿ8•ò´«’1
+q	java:S116"PRename this field "Month" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹Ë› ıÿÿÿÿ8§ò´«’1
+o	java:S116"NRename this field "Day" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«½–‡øÿÿÿÿ8§ò´«’1
+j	java:S116"ORename this field "Year" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“œ–c8§ò´«’1
+b
+java:S1117)"@Rename "dbConnection" which hides the field declared at line 29.(Í±¾„üÿÿÿÿ8¬ò´«’1
+R
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8£’µ«’1
+J
+java:S1128"-Remove this unused import 'java.time.ZoneId'.( Æ½“8£’µ«’1
+\
+java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8£’µ«’1
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8£’µ«’1
+R
+java:S1068"0Remove this unused "dbConnection" private field.(Ú¯êƒúÿÿÿÿ8²ò´«’1

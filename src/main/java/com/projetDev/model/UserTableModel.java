@@ -1,12 +1,24 @@
 package com.projetDev.model;
 
+import com.projetDev.GUI.ActivityForm;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
+import javax.xml.crypto.Data;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
+
 public class UserTableModel extends AbstractTableModel {
+    private static final Logger logger = LoggerFactory.getLogger(ActivityForm.class);
 
     List<User> wordsList;
-    String headerList[] = new String[]{"NAME", "FIRSTNAME", "GENRE", "BIRTHDATE"};
+    String headerList[] = new String[]{"NAME", "FIRSTNAME", "GENRE", "AGE"};
 
     public UserTableModel(List<User> list) {
         wordsList = list;
@@ -14,7 +26,7 @@ public class UserTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 5;
+        return 4;
     }
 
 
@@ -30,14 +42,14 @@ public class UserTableModel extends AbstractTableModel {
         entity = wordsList.get(row);
 
         switch (column) {
-            case 1:
+            case 0:
                 return entity.getName();
-            case 2:
+            case 1:
                 return entity.getFirstName();
-            case 3:
+            case 2:
                 return entity.getGenre();
-            case 4:
-                return entity.getBirthDate();
+            case 3:
+                return calculateAge(convertToLocalDateViaInstant(entity.getBirthDate()),LocalDate.now());
             default:
                 return "";
         }
@@ -48,4 +60,18 @@ public class UserTableModel extends AbstractTableModel {
     public String getColumnName(int col) {
         return headerList[col];
     }
+
+    public int calculateAge(
+            LocalDate birthDate,
+            LocalDate currentDate) {
+        // validate inputs ...
+        return Period.between(birthDate, currentDate).getYears();
+    }
+
+    public LocalDate convertToLocalDateViaInstant(Date dateToConvert) {
+        return dateToConvert.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
+    }
+
 }

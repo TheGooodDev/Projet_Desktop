@@ -4,6 +4,7 @@ import com.projetDev.model.Activity;
 import com.projetDev.model.User;
 import com.projetDev.repository.UserRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserControllerImpl implements UserController {

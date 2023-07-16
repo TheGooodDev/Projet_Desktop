@@ -1,5 +1,6 @@
 package com.projetDev;
 
+import com.projetDev.GUI.ActivityForm;
 import com.projetDev.GUI.UserForm;
 import com.projetDev.GUI.UserListForm;
 import com.projetDev.database.DbConnection;
@@ -49,7 +50,7 @@ public class Window extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 clearContainer(cp);
-                JPanel rootPanel = new UserListForm().getRootPanel();
+                JPanel rootPanel = new ActivityForm().getRootPanel();
                 cp.add(rootPanel);
             }
         });

@@ -1,9 +1,6 @@
 package com.projetDev;
 
-import com.projetDev.GUI.ActivityForm;
-import com.projetDev.GUI.StatisticListForm;
-import com.projetDev.GUI.UserForm;
-import com.projetDev.GUI.UserListForm;
+import com.projetDev.GUI.*;
 import com.projetDev.database.DbConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +20,7 @@ public class Window extends JFrame{
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JMenuBar menuBar = new JMenuBar();
+
         JMenu user = new JMenu("User");
         JMenuItem addUser = new JMenuItem("Add User");
         user.add(addUser);
@@ -44,6 +42,7 @@ public class Window extends JFrame{
                 cp.add(rootPanel);
             }
         });
+
         JMenu activity = new JMenu("Activity");
         JMenuItem addActivity = new JMenuItem("Add Activity");
         activity.add(addActivity);
@@ -55,6 +54,17 @@ public class Window extends JFrame{
                 cp.add(rootPanel);
             }
         });
+        JMenuItem listActivity = new JMenuItem("List Activities");
+        activity.add(listActivity);
+        listActivity.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clearContainer(cp);
+                JPanel rootPanel = new ActivityList().getRootPanel();
+                cp.add(rootPanel);
+            }
+        });
+
         JMenu statistics = new JMenu("Statistics");
         JMenuItem listStatistics = new JMenuItem("List Statistics");
         statistics.add(listStatistics);

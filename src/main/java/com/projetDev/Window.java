@@ -1,6 +1,7 @@
 package com.projetDev;
 
 import com.projetDev.GUI.ActivityForm;
+import com.projetDev.GUI.StatisticListForm;
 import com.projetDev.GUI.UserForm;
 import com.projetDev.GUI.UserListForm;
 import com.projetDev.database.DbConnection;
@@ -55,6 +56,16 @@ public class Window extends JFrame{
             }
         });
         JMenu statistics = new JMenu("Statistics");
+        JMenuItem listStatistics = new JMenuItem("List Statistics");
+        statistics.add(listStatistics);
+        listStatistics.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clearContainer(cp);
+                JPanel rootPanel = new StatisticListForm().getRootPanel();
+                cp.add(rootPanel);
+            }
+        });
         menuBar.add(user);
         menuBar.add(activity);
         menuBar.add(statistics);

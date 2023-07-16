@@ -1,17 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õÑ±ıÿÿÿÿ
-P
-java:S1481"5Remove this unused "connectionString" local variable.(ƒÿ‰ßúÿÿÿÿ
-]
-java:S1128";Remove this unused import 'com.mongodb.client.MongoClient'.(„‰¼¢ùÿÿÿÿ8Ü¡–©’1
-Y
-java:S1128"<Remove this unused import 'com.mongodb.client.MongoClients'.(‰Ñ¾É8İ¡–©’1
-a
-java:S1128"?Remove this unused import 'com.mongodb.client.MongoCollection'.(Âéüûÿÿÿÿ8İ¡–©’1
-_
-java:S1128"=Remove this unused import 'com.mongodb.client.MongoDatabase'.(İµÔüùÿÿÿÿ8İ¡–©’1
-i
-java:S1128
-"LRemove this unused import 'com.projetDev.repository.ActivityRepositoryImpl'.(çù§•8İ¡–©’1
-K
-java:S1128".Remove this unused import 'org.bson.Document'.(ÙË®“8İ¡–©’1
